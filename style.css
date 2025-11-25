@@ -1,0 +1,342 @@
+/* Definição das variáveis de cores pastel (Tema Padrão) */
+:root {
+    /* Cores pastel ajustadas para harmonizar com o design */
+    --rosa-pastel: #FFC0CB; /* Pink claro */
+    --roxo-pastel: #C1A6E0; /* Roxo pastel mais vibrante */
+    --fundo-suave: #FBFBFB; /* Fundo geral do body, quase branco */
+    --texto-escuro: #333333; 
+    --gradiente-hero: linear-gradient(135deg, var(--roxo-pastel) 0%, var(--rosa-pastel) 100%);
+    --sombra-card: 0 4px 15px rgba(0, 0, 0, 0.15); 
+}
+
+/* --- TEMA TLOU (Natureza e Sobrevivência) --- */
+.tlou-theme {
+    --tlou-green-escuro: #384236; 
+    --tlou-green-acento: #4E6C5D; 
+    --tlou-brown-escuro: #7A6046; 
+    --tlou-terra-clara: #B8A28E; 
+    --tlou-cinza-claro: #F0F5F0; 
+
+    --rosa-pastel: var(--tlou-brown-escuro);
+    --roxo-pastel: var(--tlou-green-escuro);
+    --fundo-suave: var(--tlou-cinza-claro); 
+    --texto-escuro: #2D3A2F; 
+    --gradiente-hero: linear-gradient(135deg, var(--tlou-green-escuro) 0%, var(--tlou-green-acento) 100%);
+    
+    background-image: url('thl3.jpg'); 
+    background-size: cover; 
+    background-position: center top; 
+    background-attachment: fixed; 
+    background-color: #1a1a1a; 
+}
+
+/* Fundo Semi-Transparente para Legibilidade no Tema TLOU */
+.tlou-theme main,
+.tlou-theme header,
+.tlou-theme footer {
+    background-color: rgba(255, 255, 255, 0.9); 
+    backdrop-filter: blur(2px); 
+}
+.tlou-theme header, .tlou-theme footer {
+    background-color: rgba(56, 66, 54, 0.9); 
+}
+.tlou-theme .hero {
+     background: linear-gradient(135deg, rgba(56, 66, 54, 0.9) 0%, rgba(78, 108, 93, 0.9) 100%);
+}
+.tlou-theme .brilho-logo {
+    animation: none; 
+    color: white; 
+    text-shadow: none;
+}
+.tlou-theme .btn-saiba-mais {
+    background-color: var(--rosa-pastel);
+}
+.tlou-theme .jogo-card {
+    border-top: 5px solid var(--tlou-terra-clara);
+}
+.tlou-theme .jogo-detalhe-conteudo {
+    background-color: var(--tlou-cinza-claro); 
+    border: 5px solid var(--tlou-brown-escuro);
+}
+/* ------------------------------------- */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--fundo-suave); 
+    color: var(--texto-escuro);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    transition: background-color 0.5s ease; 
+}
+
+/* --- Cabeçalho e Navegação --- */
+header {
+    background: var(--gradiente-hero); 
+    background-image: none; 
+    background-color: var(--roxo-pastel); 
+    
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    transition: background-color 0.5s ease; 
+    position: relative; 
+    z-index: 10; 
+    min-height: 80px; 
+    overflow: hidden; 
+}
+
+header::before {
+    content: none;
+    position: static;
+}
+
+/* --- Seção Hero com a Imagem A01.jpg de Fundo --- */
+.hero {
+    background-image: url('A01.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+    position: relative; 
+    padding: 100px 20px;
+    text-align: center;
+    color: white;
+    margin-bottom: 40px;
+    overflow: hidden; 
+    transition: background-image 0.5s ease;
+    z-index: 5; 
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(193, 166, 224, 0.6); /* Camada roxa semi-transparente */
+    backdrop-filter: blur(3px); /* Efeito de desfoque para realçar o texto */
+    z-index: 1; 
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2; 
+}
+
+main {
+    background-color: var(--fundo-suave); 
+    backdrop-filter: none; 
+    z-index: 5; 
+    position: relative;
+}
+footer {
+    background-color: var(--roxo-pastel); 
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+    transition: background-color 0.5s ease;
+    z-index: 5; 
+    position: relative;
+}
+
+.logo {
+    font-size: 2.5em; 
+    color: white;
+    display: flex;
+    align-items: center; 
+    position: relative; 
+    z-index: 2; 
+}
+
+/* --- EFEITO DE BRILHO --- */
+@keyframes brilho-rosa {
+    0% {
+        color: white; 
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    }
+    50% {
+        color: var(--rosa-pastel); 
+        text-shadow: 0 0 10px var(--rosa-pastel);
+    }
+    100% {
+        color: white; 
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    }
+}
+
+.brilho-logo {
+    animation: brilho-rosa 2.5s infinite alternate; 
+    font-weight: bold;
+    margin-left: 10px;
+    letter-spacing: 1px;
+    font-size: 0.75em; 
+    position: relative; 
+    z-index: 2; 
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    position: relative; 
+    z-index: 2; 
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 15px;
+    margin: 0 5px;
+    display: block;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+    position: relative;
+    font-weight: 500;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.hero h1 {
+    font-size: 3.5em;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.hero p {
+    font-size: 1.4em;
+    margin-bottom: 30px;
+}
+
+.btn-cta {
+    display: inline-block;
+    background-color: white;
+    color: var(--roxo-pastel);
+    padding: 12px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: all 0.3s ease;
+}
+
+.btn-cta:hover {
+    background-color: #f0f0f0;
+    transform: translateY(-2px);
+}
+
+/* --- ESTILOS DA NOVA GALERIA DE JOGOS --- */
+
+.galeria-jogos {
+    text-align: center;
+    padding: 40px 5%;
+    max-width: 1400px; 
+    margin: auto;
+}
+
+.galeria-jogos h2 {
+    color: var(--roxo-pastel);
+    margin-bottom: 40px;
+    font-size: 2.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.5s ease;
+}
+
+.galeria-jogos h2 i {
+    color: var(--rosa-pastel);
+    margin-right: 15px;
+    font-size: 0.9em;
+    transition: color 0.5s ease;
+}
+
+.galeria-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.galeria-card {
+    position: relative;
+    width: 300px; /* Largura base do card */
+    height: 400px; /* Altura do card */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--sombra-card);
+    background-size: cover; 
+    background-position: center; 
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.galeria-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+}
+
+.card-titulo {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    margin: 0;
+    background-color: rgba(0, 0, 0, 0.75); /* Fundo semi-transparente escuro */
+    color: white;
+    font-weight: bold;
+    font-size: 1.1em;
+    text-align: center;
+    opacity: 0; /* Começa invisível */
+    transition: opacity 0.3s ease-in-out;
+}
+
+.galeria-card:hover .card-titulo {
+    opacity: 1; /* Aparece ao passar o mouse */
+}
+
+/* --- Estilos antigos dos Cards de Destaque (Mantidos) --- */
+.jogo-card, .jogo-detalhe-overlay, .jogo-detalhe-conteudo, .btn-saiba-mais {
+    /* ... (Estilos das seções de cards removidas que ainda podem ser referenciadas) */
+}
+/* ------------------------------------------------------------------- */
+
+/* --- Estilos da Página de Contato e Modal (sem alterações) --- */
+.form-container, .contact-form, .form-group, .btn-submit {
+    /* ... (Estilos de contato) */
+}
+.jogo-detalhe-overlay, .jogo-detalhe-conteudo, .btn-fechar {
+    /* ... (Estilos do modal) */
+}
+/* --- Media Query para Responsividade --- */
+@media (max-width: 1200px) {
+    .galeria-card {
+        width: 45%; 
+        max-width: 350px;
+    }
+}
+@media (max-width: 768px) {
+    .galeria-card {
+        width: 80%; 
+        height: 300px;
+    }
+    .hero h1 {
+        font-size: 2.5em;
+    }
+    header {
+        flex-direction: column;
+        min-height: 120px; 
+    }
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fale Conosco - Whisper Code</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            🎮 <span class="brilho-logo">Whisper Code</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="contato.html" class="active">Fale Conosco</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="content-section form-container">
+            <h1><i class="fas fa-envelope"></i> Entre em Contato</h1>
+            
+            <p>Tem alguma sugestão de jogo para análise, quer fazer uma parceria ou simplesmente mandar um feedback? Use o formulário abaixo!</p>
+
+            <form action="#" method="POST" class="contact-form">
+                
+                <div class="form-group">
+                    <label for="nome"><i class="fas fa-user"></i> Nome:</label>
+                    <input type="text" id="nome" name="nome" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email"><i class="fas fa-at"></i> E-mail:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="assunto"><i class="fas fa-tag"></i> Assunto:</label>
+                    <input type="text" id="assunto" name="assunto" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="mensagem"><i class="fas fa-comment"></i> Mensagem:</label>
+                    <textarea id="mensagem" name="mensagem" rows="6" required></textarea>
+                </div>
+
+                <button type="submit" class="btn-submit">Enviar Mensagem</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Whisper Code. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
